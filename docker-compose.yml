@@ -11,9 +11,9 @@ services:
          - ./docker/php/develop.ini:/usr/local/etc/php/conf.d/develop.ini
          - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
          - ./logs/php:/var/log/php
-         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store
+         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store-theme
       restart: on-failure
-      container_name: ecomm-php
+      container_name: bank-store-php
 
    nginx:
       image: nginx:latest
@@ -25,12 +25,12 @@ services:
          - ./docker/nginx:/etc/nginx/conf.d
          - ./logs/nginx:/var/log/nginx
          - ./docker/nginx/ssl/localhost:/etc/nginx/ssl/localhost
-         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store
+         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store-theme
       restart: on-failure
-      container_name: ecomm-nginx
+      container_name: bank-store-nginx
    cron:
       platform: linux/amd64
-      container_name: ecomm-cron
+      container_name: bank-store-cron
       image: trammel/docker-with-supercronic
       restart: on-failure
       environment:
@@ -52,7 +52,7 @@ services:
          - ./docker/mysql/import.sh:/import.sh
       ports:
          - '4306:3306'
-      container_name: ecomm-mysql
+      container_name: bank-store-mysql
 
    phpmyadmin:
       image: phpmyadmin
@@ -63,4 +63,4 @@ services:
          - .env
       depends_on:
          - mysql
-      container_name: ecomm-phpmyadmin
+      container_name: bank-store-phpmyadmin
