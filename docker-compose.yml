@@ -11,6 +11,7 @@ services:
          - ./docker/php/develop.ini:/usr/local/etc/php/conf.d/develop.ini
          - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
          - ./logs/php:/var/log/php
+         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store
       restart: on-failure
       container_name: ecomm-php
 
@@ -24,6 +25,7 @@ services:
          - ./docker/nginx:/etc/nginx/conf.d
          - ./logs/nginx:/var/log/nginx
          - ./docker/nginx/ssl/localhost:/etc/nginx/ssl/localhost
+         - ./submodules/bank-store:/app/public/wp-content/themes/bank-store
       restart: on-failure
       container_name: ecomm-nginx
    cron:

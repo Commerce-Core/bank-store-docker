@@ -1,0 +1,3 @@
+[submodule "submodules/bank-store"]
+	path = submodules/bank-store
+	url = git@github.com:Commerce-Core/bank-store-theme.git
