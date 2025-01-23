@@ -1,0 +1,19 @@
+{
+    "name": "commerce-core/cc-api-swaggerui",
+    "description": "CommerceCore REST API Documentation Plugin (works on local environment only)",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CommerceCore\\CcApiSwaggerui\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vaclovas Lapinskis",
+            "email": "vaclovas@commercecore.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

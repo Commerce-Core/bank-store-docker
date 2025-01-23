@@ -1,0 +1,77 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Checks if a folder exist and return canonicalized absolute pathname (sort version)
+ *
+ * @param  string  $folder the path being checked.
+ * @return mixed returns the canonicalized absolute pathname on success otherwise FALSE is returned
+ */
+function folder_exist($folder)
+{
+    // Get canonicalized absolute pathname
+    $path = realpath($folder);
+
+    // If it exist, check if it's a directory
+    return ($path !== false && is_dir($path)) ? $path : false;
+}
+
+/**
+ * Scan directory for tests
+ *
+ * @param  string  $directory
+ * @return array
+ */
+function cc_scan_test_dir($directory)
+{
+    $tests = [];
+
+    $scanned_directory = array_diff(scandir($directory), ['..', '.']);
+
+    foreach ($scanned_directory as $dir) {
+        if (folder_exist("$directory/$dir/tests")) {
+            $tests[] = "$directory/$dir";
+        }
+    }
+
+    return $tests;
+}
+
+/**
+ * Run tests in directory
+ *
+ * @param  string  $dir
+ * @return void
+ */
+function cc_test_run($dir)
+{
+    $output = null;
+    $retval = null;
+    exec('bash -c "cd '.$dir.' && phpunit"', $output, $retval);
+    echo "\n\nTests from $dir returned with status $retval and output:\n";
+    foreach ($output as $line) {
+        echo $line."\n";
+    }
+}
+
+/**
+ * Init tests script
+ *
+ * @param  string  $directory
+ * @return void
+ */
+function init_tests($directory)
+{
+
+    $tests = cc_scan_test_dir($directory);
+
+    foreach ($tests as $dir) {
+        cc_test_run($dir);
+    }
+}
+
+if (count($argv) == 2) {
+    init_tests($argv[1]);
+} else {
+    echo 'Missing wordpress absolute plugins directory path.';
+}

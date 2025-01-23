@@ -1,0 +1,38 @@
+{
+  "name": "wp-api-swaggerui",
+  "version": "1.0.9",
+  "description": "SwaggerUI for WordPress",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "watch": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonyextenz/wp-api-swaggerui.git"
+  },
+  "keywords": [
+    "swaggerui",
+    "api",
+    "wordpress",
+    "restapi",
+    "wp",
+    "wpswaggerui"
+  ],
+  "author": "Agus Suroyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonyextenz/wp-api-swaggerui/issues"
+  },
+  "homepage": "https://github.com/jonyextenz/wp-api-swaggerui#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^23.4.0",
+    "swagger-ui-dist": "^4.12.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}

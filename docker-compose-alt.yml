@@ -1,0 +1,55 @@
+version: '3.1'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    env_file: '.env'
+    volumes:
+      - .:/app
+      - ./docker/php/develop.ini:/usr/local/etc/php/conf.d/develop.ini
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./logs/php:/var/log/php
+    restart: on-failure
+    container_name: ecomm-php
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - .:/app
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./docker/nginx/ssl/localhost:/etc/nginx/ssl/localhost
+    restart: on-failure
+    container_name: ecomm-nginx
+
+  mysql:
+    image: mysql:8.0.37
+    restart: on-failure
+    env_file:
+      - .env
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker/mysql/backups:/backups
+      - ./docker/mysql/import.sh:/import.sh
+    ports:
+      - '4306:3306'
+    container_name: ecomm-mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: on-failure
+    ports:
+      - 8180:80 #phpmyadmin port
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    container_name: ecomm-phpmyadmin
+
+

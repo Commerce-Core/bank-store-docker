@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/phpDocumentor/phpDocumentor/master/data/xsd/phpdoc.xsd"
+>
+    <paths>
+        <output>docs</output>
+        <cache>.phpdoc</cache>
+    </paths>
+    <version number="1.0.0">
+        <api>
+            <source dsn=".">
+                <path>wp-content/themes/commercecore-ecom/functions</path>
+                <path>wp-content/plugins/wp-commercecore-monitoring/wp-commerce-monitoring.php</path>
+                <path>wp-content/plugins/wp-commercecore-monitoring/src</path>
+                <path>wp-content/plugins/wp-gutenberg-blocks-plugin/cc-gutenberg-blocks.php</path>
+                <path>wp-content/plugins/wp-gutenberg-blocks-plugin/inc</path>
+                <path>wp-content/plugins/wp-checkout-plugin/cc-checkout.php</path>
+                <path>wp-content/plugins/wp-checkout-plugin/src</path>
+                <path>wp-content/plugins/wp-checkout-plugin/inc</path>
+                <path>wp-content/plugins/wp-brands-plugin/cc-brands.php</path>
+                <path>wp-content/plugins/wp-brands-plugin/src</path>
+                <path>wp-content/plugins/wp-landers-plugin/cc-landers.php</path>
+                <path>wp-content/plugins/wp-landers-plugin/src</path>
+                <path>wp-content/plugins/wp-ab-tests/wp-ab-tests.php</path>
+                <path>wp-content/plugins/wp-ab-tests/src</path>
+                <path>wp-content/plugins/wp-ecom-experiments/cc-rotate.php</path>
+                <path>wp-content/plugins/wp-ecom-experiments/src</path>
+                <path>wp-content/plugins/cc-posts-resave/cc-posts-resave.php</path>
+                <path>wp-content/plugins/cc-posts-resave/src</path>
+                <path>wp-content/plugins/wp-emails-plugin/emails-plugin.php</path>
+                <path>wp-content/plugins/wp-emails-plugin/src</path>
+                <path>wp-content/plugins/wp-email-marketing/wp-email-marketing.php</path>
+                <path>wp-content/plugins/wp-email-marketing/src</path>
+                <path>wp-content/plugins/wp-domain-replacer/domain-replacer.php</path>
+                <path>wp-content/plugins/wp-domain-replacer/src</path>
+                <path>wp-content/plugins/cc-code-obfuscator/cc-code-obfuscator.php</path>
+                <path>wp-content/plugins/cc-code-obfuscator/src</path>
+                <path>wp-content/plugins/custom-css-plugin/custom-css-plugin.php</path>
+                <path>wp-content/plugins/custom-css-plugin/src</path>
+                <path>wp-content/plugins/cc-maintenance/cc-maintenance.php</path>
+                <path>wp-content/plugins/cc-maintenance/src</path>
+                <path>wp-content/plugins/cc-currency-formatter/cc-currency-formatter.php</path>
+                <path>wp-content/plugins/cc-currency-formatter/src</path>
+                <path>wp-content/plugins/device-info-collect/device-info-collect.php</path>
+                <path>wp-content/plugins/device-info-collect/src</path>
+                <path>wp-content/plugins/post-translator-plugin/post-translator.php</path>
+                <path>wp-content/plugins/post-translator-plugin/src</path>
+                <path>wp-content/plugins/post-translator-plugin/inc</path>
+                <path>wp-content/plugins/sentry-plugin/sentry-plugin.php</path>
+                <path>wp-content/plugins/sentry-plugin/src</path>
+                <path>wp-content/plugins/cc-timber-v2/cc-timber-v2.php</path>
+                <path>wp-content/plugins/cc-timber-v2/src</path>
+                <path>wp-content/plugins/wp-ecom-cache/wp-ecom-cache.php</path>
+                <path>wp-content/plugins/wp-ecom-cache/src</path>
+                <path>wp-content/plugins/cc-image-optimizer/cc-image-optimizer.php</path>
+                <path>wp-content/plugins/cc-image-optimizer/src</path>
+                <path>wp-content/plugins/cc-local-gtm/cc-local-gtm.php</path>
+                <path>wp-content/plugins/cc-local-gtm/src</path>
+                <path>wp-content/plugins/cc-logger/cc-logger.php</path>
+                <path>wp-content/plugins/cc-logger/src</path>
+                <path>wp-content/plugins/cc-legal-pages/cc-legal-pages.php</path>
+                <path>wp-content/plugins/cc-legal-pages/src</path>
+                <path>wp-content/mu-plugins/cc-essentials/src</path>
+                <path>wp-content/mu-plugins/cc-api-swaggerui/cc-api-swaggerui.php</path>
+                <path>wp-content/mu-plugins/cc-api-swaggerui/src</path>
+            </source>
+        </api>
+    </version>
+</phpdocumentor>
