@@ -1,6 +1,6 @@
-# Ecomm
+# bank-store
 
-New WP ecomm with WordPress files
+New WP bank-store with WordPress files
 
 ## Project details
 
@@ -61,21 +61,21 @@ Has `Timber 1.23.1` plugin in `public/wp-content/plugins/timber-library`
 
 6. Database import into actual DB (`MYSQL_DATABASE` env variable)
    - put DB SQL dump file into docker/mysql/backups folder
-   - get inside MySql container: `docker exec -it ecomm-mysql bash`
+   - get inside MySql container: `docker exec -it bank-store-mysql bash`
    - provide execution rights for `import.sh`: `chmod +x import.sh`
    - execute import script: `./import.sh  exampledb2.sql` where `exampledb2.sql` is dump file in `docker/mysql/backups`
 7. Replace WP host in imported DB:
 
    - ensure that project is executed
    - ex. replace https://getcamtrix.com to http://localhost:
-     - dry run to check for occurencies: `docker exec ecomm-php wp-cli --allow-root search-replace 'https://getcamtrix.com' 'http://localhost' --dry-run`
-     - execute replacements: `docker exec ecomm-php wp-cli --allow-root search-replace 'https://getcamtrix.com' 'http://localhost'`
+     - dry run to check for occurencies: `docker exec bank-store-php wp-cli --allow-root search-replace 'https://getcamtrix.com' 'http://localhost' --dry-run`
+     - execute replacements: `docker exec bank-store-php wp-cli --allow-root search-replace 'https://getcamtrix.com' 'http://localhost'`
 
 8. WP-CLI commands:
 
    - create WP admin user:
      - ensure that project is executed
-     - create admin user: `docker exec ecomm-php wp-cli --allow-root user create wpadmin wpadmindev@commercecore.com --role=administrator --send-email=false --user_pass=wpadmindev`
+     - create admin user: `docker exec bank-store-php wp-cli --allow-root user create wpadmin wpadmindev@commercecore.com --role=administrator --send-email=false --user_pass=wpadmindev`
 
 9. Xdebug
 
@@ -141,7 +141,7 @@ Has `Timber 1.23.1` plugin in `public/wp-content/plugins/timber-library`
 
 12. Nginx
 
-    current nginx config adopted for static pages cache plugin, see details [here](https://github.com/Commerce-Core/ecomm/pull/2)
+    current nginx config adopted for static pages cache plugin, see details [here](https://github.com/Commerce-Core/bank-store/pull/2)
 
 13. CommerceCore Essentials Must use plugin `public/wp-content/mu-plugins/cc-essentials`
     - aim to hold essential functions and common logic used in other plugins and theme (feature plan)
