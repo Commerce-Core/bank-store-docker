@@ -1,22 +1,23 @@
 {
-    "name": "commercecore/ecomm-new",
-    "description": "New CommerceCore Ecom WP repository",
-    "type": "project",
-    "minimum-stability": "dev",
-    "require": {
-        "kporras07/composer-symlinks": "^1.2",
-        "vlucas/phpdotenv": "^5.6@dev"
-    },
-    "scripts": {
-        "create-symlinks": [
-            "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
-        ]
-    },
-    "extra": {
-        "symlinks": {
-        }
-    },
-    "require-dev": {
-        "php-stubs/wp-cli-stubs": "dev-master"
+  "name": "commercecore/ecomm-new",
+  "description": "New CommerceCore Ecom WP repository",
+  "type": "project",
+  "minimum-stability": "dev",
+  "require": {
+    "kporras07/composer-symlinks": "^1.2",
+    "vlucas/phpdotenv": "^5.6@dev",
+    "ext-intl": "*"
+  },
+  "scripts": {
+    "create-symlinks": [
+      "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+    ]
+  },
+  "extra": {
+    "symlinks": {
     }
+  },
+  "require-dev": {
+    "php-stubs/wp-cli-stubs": "dev-master"
+  }
 }
